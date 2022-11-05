@@ -29,8 +29,7 @@ export const putDb = async (content) => {
 };
 
 
-export const getDb = async () => console.error('getDb not implemented');\
-console.log('get from db');
+export const getDb = async () => {
 const jateDb = await openDB('jate', 1);
 const tx = jateDb.transaction('jate', 'readonly');
 const store = tx.objectStore('jate');
@@ -41,5 +40,6 @@ result
 : console.log('not found');
 
 return result?.value;
+};
 
 initdb();
