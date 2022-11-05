@@ -1,7 +1,14 @@
 import { Workbox } from 'workbox-window';
 import Editor from './editor';
+import Logo from '../images/logo.png';
 import './database';
-import '../css/style.css';
+import "../css/style.css";
+import "./database";
+import "./editor";
+import "./header";
+import "./install";
+import { Tooltip, Toast, Popover } from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
