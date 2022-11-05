@@ -25,6 +25,28 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin',
       }),
+      new WebpackPwaManifest({
+        name: 'Contact Cards Application',
+        short_name: 'Contact Cards',
+        description: 'Keep track of contacts!',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
+        start_url: './',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/icon-manifest.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+          {
+            src: path.resolve('src/images/icon-manifest.png'),
+            size: '1024x1024',
+            destination: path.join('assets', 'icons'),
+            purpose: 'maskable'
+          }
+        ],
+      }),
       new InjectManifest({
         swSrc: '../client/src-sw',
         swDest: 'service-worker.js',
